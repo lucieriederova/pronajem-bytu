@@ -35,6 +35,16 @@
     font-family:'Plus Jakarta Sans',sans-serif; font-size:1.05rem; font-weight:600;
     color:var(--ink); flex:1;
   }
+  .bar-name--link {
+    text-decoration:none; display:inline-flex; align-items:center; gap:5px;
+    border-radius:6px; transition:color .18s;
+  }
+  .bar-name--link .bar-name-pin {
+    color:var(--accent); opacity:0; transform:translateY(2px);
+    transition:opacity .18s, transform .18s; flex-shrink:0;
+  }
+  .bar-name--link:hover { color:var(--accent); }
+  .bar-name--link:hover .bar-name-pin { opacity:1; transform:translateY(0); }
   .bar-divider { width:1px; height:26px; background:var(--soft); flex-shrink:0; }
   .bar-chips { display:flex; gap:6px; flex-shrink:0; }
   .chip {
@@ -237,7 +247,10 @@
   <!-- TOPBAR -->
   <header class="bar">
     <span class="bar-tag">Pronájem</span>
-    <span class="bar-name">Byt 3+1 · Praha 9 – Prosek, Jablonecká 9</span>
+    <a href="https://maps.google.com/?q=Jablonecká+9,+Praha+9+Prosek" target="_blank" rel="noopener" class="bar-name bar-name--link">
+      Byt 3+1 · Praha 9 – Prosek, Jablonecká 9
+      <svg class="bar-name-pin" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    </a>
     <div class="bar-divider"></div>
     <div class="bar-chips">
       <div class="chip"><span class="chip-val">62 m²</span><span class="chip-lbl">+ lodžie</span></div>
