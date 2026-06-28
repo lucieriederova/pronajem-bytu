@@ -57,15 +57,15 @@
   .bar-cta:hover { background:#2E2C28; }
   .bar-cta::after {
     content:'Pro více informací klidně volejte';
-    position:absolute; bottom:calc(100% + 8px); right:0;
+    position:absolute; top:calc(100% + 8px); right:0;
     background:var(--ink); color:rgba(255,255,255,.85);
     font-size:.65rem; font-weight:400; letter-spacing:.2px;
     padding:6px 12px; border-radius:8px; white-space:nowrap;
-    opacity:0; transform:translateY(4px);
+    opacity:0; transform:translateY(-4px);
     transition:opacity .2s, transform .2s;
     pointer-events:none;
   }
-  .bar-cta:hover::after { opacity:1; transform:translateY(0); }
+  .bar-cta:hover::after { opacity:1; transform:translateY(0); z-index:100; }
 
   /* ── LAYOUT ── */
   .main { display:grid; grid-template-columns:360px 1fr; overflow:hidden; }
