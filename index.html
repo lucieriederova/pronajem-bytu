@@ -54,6 +54,17 @@
   }
   .chip-val { font-family:'Plus Jakarta Sans',sans-serif; font-size:.82rem; font-weight:700; color:var(--ink); line-height:1.1; }
   .chip-lbl { font-size:.58rem; color:var(--mid); text-transform:uppercase; letter-spacing:1px; margin-top:1px; }
+  .chip--metro { position:relative; cursor:default; }
+  .chip--metro::after {
+    content:'Stanice Prosek';
+    position:absolute; top:calc(100% + 7px); left:50%; transform:translateX(-50%) translateY(-3px);
+    background:var(--ink); color:rgba(255,255,255,.9);
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:.65rem; font-weight:500; letter-spacing:.2px;
+    padding:5px 11px; border-radius:7px; white-space:nowrap;
+    opacity:0; transition:opacity .18s, transform .18s;
+    pointer-events:none; z-index:50;
+  }
+  .chip--metro:hover::after { opacity:1; transform:translateX(-50%) translateY(0); }
   .bar-price-wrap { text-align:right; flex-shrink:0; }
   .bar-price { font-family:'Plus Jakarta Sans',sans-serif; font-size:1.3rem; font-weight:800; color:var(--ink); line-height:1; }
   .bar-price-sub { font-size:.6rem; color:var(--mid); letter-spacing:.5px; margin-top:1px; }
@@ -256,7 +267,7 @@
       <div class="chip"><span class="chip-val">62 m²</span><span class="chip-lbl">+ lodžie</span></div>
       <div class="chip"><span class="chip-val">3+1</span><span class="chip-lbl">dispozice</span></div>
       <div class="chip"><span class="chip-val">11. p.</span><span class="chip-lbl">2 výtahy</span></div>
-      <div class="chip"><span class="chip-val">5 min</span><span class="chip-lbl">Metro C</span></div>
+      <div class="chip chip--metro"><span class="chip-val">5 min</span><span class="chip-lbl">Metro C</span></div>
     </div>
     <div class="bar-divider"></div>
     <div class="bar-price-wrap">
